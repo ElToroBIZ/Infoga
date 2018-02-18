@@ -153,16 +153,17 @@ class infoga(object):
 			if o in ('-h','--help'):
 				banner().__usage__(True)
 		# search
-		if self.source == "ask":self.ask(self.domain)
-		elif self.source == "all":self.all(self.domain)
-		elif self.source == "google":self.google(self.domain)
-		elif self.source == "baidu":self.baidu(self.domain)
-		elif self.source == "bing":self.bing(self.domain)
-		elif self.source == "dogpile":self.dogpile(self.domain)
-		elif self.source == "exalead":self.exalead(self.domain)
-		elif self.source == "jigsaw":self.jigsaw(self.domain)
-		elif self.source == "pgp":self.pgp(self.domain)
-		elif self.source == "yahoo":self.yahoo(self.domain)
+		if self.domain != "":
+			if self.source == "ask":self.ask(self.domain)
+			elif self.source == "all":self.all(self.domain)
+			elif self.source == "google":self.google(self.domain)
+			elif self.source == "baidu":self.baidu(self.domain)
+			elif self.source == "bing":self.bing(self.domain)
+			elif self.source == "dogpile":self.dogpile(self.domain)
+			elif self.source == "exalead":self.exalead(self.domain)
+			elif self.source == "jigsaw":self.jigsaw(self.domain)
+			elif self.source == "pgp":self.pgp(self.domain)
+			elif self.source == "yahoo":self.yahoo(self.domain)
 		if self.listEmail == []:
 			exit(warn('Not found emails :('))
 		for email in self.listEmail:
